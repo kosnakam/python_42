@@ -3,9 +3,7 @@ import string
 
 
 def main():
-    """
-    Main function to analyze text input from command line arguments.
-    """
+    """Main function to analyze text input from command line arguments."""
     try:
         assert len(sys.argv) == 2, "Please provide exactly one argument."
         print("The text contains", len(sys.argv[1]), "characters:")
