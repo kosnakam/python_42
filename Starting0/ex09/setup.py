@@ -9,12 +9,11 @@ setup(
     author="kosnakam",
     author_email="kosnakam@42.fr",
     license="MIT",
-    # install_requires=[],
-    # metadata_version="2.1",
-    # classifiers=[],
-    # entry_points=None,
+    install_requires=[],
+    metadata_version="2.1",
+    classifiers=[],
+    entry_points=None,
 
-    # packages=[''],
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
 )
