@@ -5,7 +5,7 @@ def ft_tqdm(lst: range) -> None:
     progressbar every time a value is requested.
     """
     n = len(lst)
-    bar_len = 47
+    bar_len = 42
     for i in lst:
         percent = (i + 1) / n
         num_hash = int(bar_len * percent)
