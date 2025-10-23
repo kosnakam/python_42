@@ -1,8 +1,8 @@
-from ft_package import count_in_list
+import ft_package
 
 
 def main():
-    count_in_list()
+    ft_package.count_in_list()
     # print(count_in_list(["toto", "tata", "toto"], "toto"))
     # print(count_in_list(["toto", "tata", "toto"], "tutu"))
 
