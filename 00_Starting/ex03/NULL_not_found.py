@@ -1,4 +1,7 @@
-def NULL_not_found(object: any) -> int:
+from typing import Any
+
+
+def NULL_not_found(object: Any) -> int:
 
 	if (object == None):
 		print("Nothing", ": ", object, " ", type(object), sep='')
