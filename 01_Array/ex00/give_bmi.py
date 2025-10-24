@@ -26,6 +26,7 @@ def give_bmi(
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """This function compare bmi and oranges."""
     try:
+        assert type(limit) is None, "The type of Bmi is NoneType!"
         assert type(limit) is int, "The second argument must be of type int!"
         assert all(
             isinstance(element, (float, int)) for element in bmi
@@ -39,7 +40,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print(f"Error(apply_limit): {e}")
         return None
     return ret
-
-
-if __name__ == "__main__":
-    print("This is a module that dose not contain a main function.")
