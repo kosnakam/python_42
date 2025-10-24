@@ -8,7 +8,9 @@ def main():
         assert len(sys.argv) == 3
         assert sys.argv[2].isdigit()
         input_string = sys.argv[1].split()
-        filtered = list(ft_filter(lambda x: len(x) > int(sys.argv[2]), input_string))
+        filtered = list(
+            ft_filter(lambda x: len(x) > int(sys.argv[2]), input_string)
+            )
         if not len(filtered):
             print("[]")
         else:
