@@ -22,7 +22,7 @@ def ft_zoom(arg: list) -> list:
         print(f"Error(ft_zoom): {e}")
         return None
 
-    return (arr_3d)
+    return arr_3d
 
 
 def main():
