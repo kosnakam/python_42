@@ -14,4 +14,6 @@ def ft_load(path: str) -> list:
     except AssertionError as e:
         print(f"Error(ft_load): {e}")
         return None
+    except FileNotFoundError as e:
+        print(f"Error(ft_load): {e}")
     return ret
