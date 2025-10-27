@@ -26,10 +26,12 @@ def ft_zoom(arg: list) -> list:
 
 
 def ft_rotate(arg: list) -> list:
+    """This function transposes the image and rotates it 90 degrees."""
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
-        img = Image.fromarray(np.squeeze(arg, axis=2)).rotate(90).transpose(Image.FLIP_TOP_BOTTOM)
+        img = Image.fromarray(np.squeeze(arg, axis=2)
+                              ).rotate(90).transpose(Image.FLIP_TOP_BOTTOM)
         plt.imshow(img, cmap='gray')
         plt.show()
 
@@ -44,6 +46,8 @@ def ft_rotate(arg: list) -> list:
 
 
 def main():
+    """Main function that calls ft_load, ft_zoom and
+    ft_rotate and prints the array."""
     im = ft_load("animal.jpeg")
     # print(im)
 

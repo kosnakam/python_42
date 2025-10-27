@@ -26,6 +26,7 @@ def ft_zoom(arg: list) -> list:
 
 
 def main():
+    """Main function that calls ft_load and ft_zoom and prints the array."""
     img = ft_load("animal.jpeg")
     print(img)
 
