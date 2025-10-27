@@ -1,5 +1,6 @@
 from array2D import slice_me
 
+
 family = [[1.80, 78.4],
             [2.15, 102.7],
             [2.10, 98.5],
