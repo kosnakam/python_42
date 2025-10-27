@@ -4,11 +4,12 @@ from PIL import Image
 import numpy as np
 
 
-def ft_zoom(ls: list) -> list:
+def ft_zoom(arg: list) -> list:
+    """This function slices image, show it and return the np.array"""
     try:
-        assert type(ls) is np.ndarray, "This argument is not accepted."
+        assert type(arg) is np.ndarray, "This argument is not accepted."
 
-        region = Image.fromarray(ls).convert('L').crop((450, 100, 850, 500))
+        region = Image.fromarray(arg).convert('L').crop((450, 100, 850, 500))
         plt.imshow(region, cmap='gray')
         plt.show()
 
@@ -32,6 +33,7 @@ def main():
     print(zoomed)
 
     return
+
 
 if __name__ == "__main__":
     main()
