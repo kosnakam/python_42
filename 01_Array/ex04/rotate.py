@@ -10,18 +10,17 @@ def ft_zoom(arg: list) -> list:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
         img = Image.fromarray(arg).convert('L').crop((450, 100, 850, 500))
-        # plt.imshow(img, cmap='gray')
-        # plt.show()
 
         arr = np.array(img)
         arr_3d = arr[:, :, np.newaxis]
 
-        print(f"New shape after slicing: {arr_3d.shape} or {arr.shape}")
+        print(f"The shape of image is: {arr_3d.shape} or {arr.shape}")
 
     except AssertionError as e:
         print(f"Error(ft_zoom): {e}")
         return None
 
+    # return arr
     return arr_3d
 
 
@@ -30,8 +29,10 @@ def ft_rotate(arg: list) -> list:
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
-        img = Image.fromarray(np.squeeze(arg, axis=2)
-                              ).rotate(90).transpose(Image.FLIP_TOP_BOTTOM)
+        # arr = np.array([list(x) for x in zip(*arg)])
+        arr = np.array([list(x) for x in zip(*np.squeeze(arg, axis=2))])
+
+        img = Image.fromarray(arr)
         plt.imshow(img, cmap='gray')
         plt.show()
 
@@ -49,7 +50,6 @@ def main():
     """Main function that calls ft_load, ft_zoom and
     ft_rotate and prints the array."""
     im = ft_load("animal.jpeg")
-    # print(im)
 
     zoomed = ft_zoom(im)
     print(zoomed)
