@@ -3,7 +3,8 @@ def give_bmi(
         ) -> list[int | float]:
     """This function return the bmi list."""
     try:
-        assert type(height) is list and type(weight) is list, "Arguments error."
+        assert type(height) is list and type(weight
+                                             ) is list, "Arguments error."
         assert len(height) == len(
             weight
             ), "Lists of arguments must be the same size!"
