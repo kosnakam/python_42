@@ -9,11 +9,11 @@ def ft_zoom(arg: list) -> list:
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
-        region = Image.fromarray(arg).convert('L').crop((450, 100, 850, 500))
-        plt.imshow(region, cmap='gray')
+        img = Image.fromarray(arg).convert('L').crop((450, 100, 850, 500))
+        plt.imshow(img, cmap='gray')
         plt.show()
 
-        arr = np.array(region)
+        arr = np.array(img)
         arr_3d = arr[:, :, np.newaxis]
 
         print(f"New shape after slicing: {arr_3d.shape} or {arr.shape}")
@@ -26,10 +26,10 @@ def ft_zoom(arg: list) -> list:
 
 
 def main():
-    im = ft_load("animal.jpeg")
-    print(im)
+    img = ft_load("animal.jpeg")
+    print(img)
 
-    zoomed = ft_zoom(im)
+    zoomed = ft_zoom(img)
     print(zoomed)
 
     return
