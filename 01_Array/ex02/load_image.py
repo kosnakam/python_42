@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def ft_load(path: str) -> list[list[int]]:
+def ft_load(path: str) -> list:
     """This function loads path and analyzes the shape."""
     try:
         assert type(path) is not None, "This argument is not accepted."
