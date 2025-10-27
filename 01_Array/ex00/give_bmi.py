@@ -3,6 +3,7 @@ def give_bmi(
         ) -> list[int | float]:
     """This function return the bmi list."""
     try:
+        assert height is not None and weight is not None, "Arguments error."
         assert len(height) == len(
             weight
             ), "Lists of arguments must be the same size!"
@@ -26,7 +27,7 @@ def give_bmi(
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """This function compare bmi and oranges."""
     try:
-        assert type(limit) is None, "The type of Bmi is NoneType!"
+        assert bmi is not None and limit is not None, "The type of Bmi is NoneType!"
         assert type(limit) is int, "The second argument must be of type int!"
         assert all(
             isinstance(element, (float, int)) for element in bmi
