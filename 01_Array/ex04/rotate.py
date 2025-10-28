@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 
-def ft_grey(arg):
+def ft_grey(arg: list) -> list:
     """This function converts the argument to grayscale."""
     height, width, _ = arg.shape
     grey = np.zeros((height, width), dtype=np.uint8)
@@ -16,7 +16,6 @@ def ft_grey(arg):
             b = arg[i, j, 2]
             val = r * 0.2989 + g * 0.5870 + b * 0.1140
             grey[i, j] = int(val)
-
     return grey
 
 
@@ -29,7 +28,6 @@ def ft_zoom(arg: np.ndarray) -> np.ndarray:
         arr_3d = arr[:, :, np.newaxis]
 
         print(f"The shape of image is: {arr_3d.shape} or {arr.shape}")
-
         # return arr
         return arr_3d
 
@@ -50,7 +48,6 @@ def ft_rotate(arg: list) -> list:
         plt.imshow(img, cmap='gray')
         plt.show()
         print(f"New shape after Transpose: {arr.shape}")
-
         return arr
 
     except AssertionError as e:
