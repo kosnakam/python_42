@@ -36,7 +36,6 @@ def ft_rotate(arg: list) -> list:
         plt.imshow(img, cmap='gray')
         plt.show()
 
-        arr = np.array(img)
         print(f"New shape after Transpose: {arr.shape}")
 
     except AssertionError as e:
