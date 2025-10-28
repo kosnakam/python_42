@@ -26,7 +26,6 @@ def ft_red(arg: list) -> list:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
         ret = arg.copy()
-
         ret[:, :, 1] = arg[:, :, 1] * 0
         ret[:, :, 2] = arg[:, :, 2] * 0
 
@@ -46,7 +45,6 @@ def ft_green(arg: list) -> list:
         assert type(arg) is np.ndarray, "This argument is not accepted."
 
         ret = arg.copy()
-
         ret[:, :, 0] = arg[:, :, 0] - arg[:, :, 0]
         ret[:, :, 2] = arg[:, :, 2] - arg[:, :, 2]
 
@@ -64,9 +62,8 @@ def ft_blue(arg: list) -> list:
     """Set all color components except blue to zero."""
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
-    
-        ret = arg.copy()
 
+        ret = arg.copy()
         ret[:, :, 0] = 0
         ret[:, :, 1] = 0
 
@@ -84,22 +81,13 @@ def ft_grey(arg: list) -> list:
     """Display in grayscale."""
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
-            
-        height, width, _ = arg.shape
-        grey = np.zeros((height, width), dtype=np.uint8)
 
-        for i in range(height):
-            for j in range(width):
-                r = arg[i, j, 0]
-                g = arg[i, j, 1]
-                b = arg[i, j, 2]
-                val = r * 0.2989 + g * 0.5870 + b * 0.1140
-                grey[i, j] = int(val)
+        ret = arg[:, :, 1]
 
-        img = Image.fromarray(grey)
+        img = Image.fromarray(ret)
         plt.imshow(img, cmap='gray')
         plt.show()
-        return grey
+        return ret
 
     except AssertionError as e:
         print(f"Error(ft_grey): {e}")
