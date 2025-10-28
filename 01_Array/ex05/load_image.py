@@ -5,7 +5,7 @@ import numpy as np
 def ft_load(path: str) -> list:
     """This function loads path and analyzes the shape."""
     try:
-        assert type(path) is not None, "This argument is not accepted."
+        assert type(path) is str, "This argument is not accepted."
 
         im = Image.open(path)
         ret = np.array(im)
