@@ -11,9 +11,8 @@ def slice_me(family: list, start: int, end: int) -> list:
         print(f"My shape is : ({len(family)}, {base_len})")
         ret = family[start:end]
         print(f"My new shape is : ({len(ret)}, {base_len})")
+        return ret
 
     except AssertionError as e:
         print(f"Error(slice_me): {e}")
         return
-
-    return ret

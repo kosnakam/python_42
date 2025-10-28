@@ -10,8 +10,8 @@ def ft_load(path: str) -> list:
         img = Image.open(path)
         arr = np.array(img)
         print(f"The shape of image is: {arr.shape}")
+        return arr
 
     except (AssertionError, FileNotFoundError) as e:
         print(f"Error(ft_load): {e}")
         return None
-    return arr

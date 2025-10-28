@@ -18,11 +18,11 @@ def give_bmi(
         ret = []
         for h, w in zip(height, weight):
             ret.append(w/pow(h, 2))
+        return ret
 
     except AssertionError as e:
         print(f"Error(give_bmi): {e}")
         return None
-    return ret
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -37,8 +37,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         ret = []
         for element in bmi:
             ret.append(True if element > limit else False)
+        return ret
 
     except AssertionError as e:
         print(f"Error(apply_limit): {e}")
         return None
-    return ret

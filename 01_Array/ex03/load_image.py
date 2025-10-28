@@ -7,11 +7,11 @@ def ft_load(path: str) -> list:
     try:
         assert type(path) is str, "This argument is not accepted."
 
-        im = Image.open(path)
-        ret = np.array(im)
-        print(f"The shape of image is: {ret.shape}")
+        img = Image.open(path)
+        arr = np.array(img)
+        print(f"The shape of image is: {arr.shape}")
+        return arr
 
     except (AssertionError, FileNotFoundError) as e:
         print(f"Error(ft_load): {e}")
         return None
-    return ret
