@@ -4,10 +4,11 @@ from PIL import Image
 import numpy as np
 
 
-def ft_grey(arg):
+def ft_grey(arg: list) -> list:
     """This function converts the argument to grayscale."""
     height, width, _ = arg.shape
     grey = np.zeros((height, width), dtype=np.uint8)
+
     for i in range(height):
         for j in range(width):
             r = arg[i, j, 0]
