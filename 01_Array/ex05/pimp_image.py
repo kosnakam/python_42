@@ -13,11 +13,11 @@ def ft_invert(arg: list) -> list:
         img = Image.fromarray(ret)
         plt.imshow(img)
         plt.show()
+        return ret
 
     except AssertionError as e:
         print(f"Error(ft_invert): {e}")
         return None
-    return ret
 
 
 def ft_red(arg: list) -> list:
@@ -33,11 +33,11 @@ def ft_red(arg: list) -> list:
         img = Image.fromarray(ret)
         plt.imshow(img)
         plt.show()
+        return ret
 
     except AssertionError as e:
         print(f"Error(ft_red): {e}")
         return None
-    return ret
 
 
 def ft_green(arg: list) -> list:
@@ -53,11 +53,11 @@ def ft_green(arg: list) -> list:
         img = Image.fromarray(ret)
         plt.imshow(img)
         plt.show()
+        return ret
 
     except AssertionError as e:
         print(f"Error(ft_green): {e}")
         return None
-    return ret
 
 
 def ft_blue(arg: list) -> list:
@@ -73,11 +73,11 @@ def ft_blue(arg: list) -> list:
         img = Image.fromarray(ret)
         plt.imshow(img)
         plt.show()
+        return ret
 
     except AssertionError as e:
         print(f"Error(ft_blue): {e}")
         return None
-    return ret
 
 
 def ft_grey(arg: list) -> list:
@@ -85,16 +85,21 @@ def ft_grey(arg: list) -> list:
     try:
         assert type(arg) is np.ndarray, "This argument is not accepted."
             
-        ret = arg.copy()
+        height, width, _ = arg.shape
+        grey = np.zeros((height, width), dtype=np.uint8)
 
-        # ret[:, :, 0] = arg[:, :, :] / 3
-        # ret[:, :, 1] = arg[:, :, :] / 3
-        # ret[:, :, 2] = arg[:, :, :] / 3
+        for i in range(height):
+            for j in range(width):
+                r = arg[i, j, 0]
+                g = arg[i, j, 1]
+                b = arg[i, j, 2]
+                val = r * 0.2989 + g * 0.5870 + b * 0.1140
+                grey[i, j] = int(val)
 
-        img = Image.fromarray(ret)
-        plt.imshow(img)
+        img = Image.fromarray(grey)
+        plt.imshow(img, cmap='gray')
         plt.show()
+        return grey
 
     except AssertionError as e:
         print(f"Error(ft_grey): {e}")
-    return
