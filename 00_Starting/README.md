@@ -6,11 +6,3 @@
 python3 -m venv venv
 . venv/bin/activate
 ```
-
-2. Install libs in the virtual enviroment
-
-ex02)
-pip install numpy
-
-ex03)
-pip install matplotlib
