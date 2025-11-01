@@ -13,7 +13,7 @@ def main():
         xticks = list(range(min(years), max(years), 40))
 
         plt.figure(figsize=(8, 6))
-        plt.plot(years, values, label=country)
+        plt.plot(years, values)
         plt.xticks(xticks)
         plt.title(f"{country} Life expectancy Projections")
         plt.xlabel("Year")
