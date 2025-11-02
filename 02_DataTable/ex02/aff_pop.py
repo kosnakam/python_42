@@ -11,7 +11,7 @@ X_INTERVAL = 40
 Y_INTERVAL = 20_000_000
 
 
-def convert_float(arg):
+def convert_float(arg) -> float | str:
     "Convert a string to a float."
     if arg.isalpha():
         return arg
@@ -25,12 +25,12 @@ def convert_float(arg):
         return float(arg)
 
 
-def millions_formatter(x, pos):
+def millions_formatter(x, pos) -> str:
     """Change the way millions are expressed."""
     return f"{int(x / MILLION)}M"
 
 
-def load_and_prepare_data(filename, countries):
+def load_and_prepare_data(filename, countries) -> list:
     """Read the CSV file and prepare the data."""
     df = load(filename)
     countries = sorted(countries)
@@ -42,7 +42,7 @@ def load_and_prepare_data(filename, countries):
     return years, values, countries
 
 
-def get_ticks(values, years, Y_INTERVAL):
+def get_ticks(values, years, Y_INTERVAL) -> list:
     """Set the x-axis and y-axis scales and retrun them."""
     xticks = list(range(min(years), max(years), X_INTERVAL))
     start = Y_INTERVAL
@@ -52,7 +52,7 @@ def get_ticks(values, years, Y_INTERVAL):
     return xticks, yticks
 
 
-def plot_population(years, values, countries, xticks, yticks):
+def plot_population(years, values, countries, xticks, yticks) -> None:
     """Plot the populations of multiple countries."""
     fig = plt.figure(figsize=(8, 6))
     ax = fig.add_subplot(1, 1, 1)
