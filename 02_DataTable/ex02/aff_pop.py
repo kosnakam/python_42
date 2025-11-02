@@ -80,6 +80,7 @@ def main():
 
     except Exception as e:
         print(f"Error(main): {e}")
+        return
 
 
 if __name__ == "__main__":
