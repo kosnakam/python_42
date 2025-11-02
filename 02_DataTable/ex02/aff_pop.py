@@ -12,6 +12,7 @@ Y_INTERVAL = 20_000_000
 
 
 def convert_float(arg):
+    "Convert a string to a float."
     if arg.isalpha():
         return arg
     if isinstance(arg, str) and arg.endswith('B'):
@@ -25,21 +26,24 @@ def convert_float(arg):
 
 
 def millions_formatter(x, pos):
+    """Change the way millions are expressed."""
     return f'{int(x / MILLION)}M'
 
 
 def load_and_prepare_data(filename, countries):
+    """Read the CSV file and prepare the data."""
     df = load(filename)
     countries = sorted(countries)
     data = df[df["country"].isin(countries)].copy()
     for col in data.columns[1:]:
         data[col] = data[col].apply(convert_float)
-    years = [int(y) for y in data.columns[1:-50]]
     values = [data.iloc[i, 1:-50] for i in range(data.shape[0])]
+    years = [int(y) for y in data.columns[1:-50]]
     return years, values, countries
 
 
 def get_ticks(values, years, Y_INTERVAL):
+    """Set the x-axis and y-axis scales and retrun them."""
     xticks = list(range(min(years), max(years), X_INTERVAL))
     start = Y_INTERVAL
     # start = int(min(v.min() for v in values))
@@ -49,6 +53,7 @@ def get_ticks(values, years, Y_INTERVAL):
 
 
 def plot_population(years, values, countries, xticks, yticks):
+    """Plot the populations of multiple countries."""
     fig = plt.figure(figsize=(8, 6))
     ax = fig.add_subplot(1, 1, 1)
     ax.set_xticks(xticks)
@@ -64,11 +69,11 @@ def plot_population(years, values, countries, xticks, yticks):
 
 
 def main():
-    """Main function to read CSV files and create graphs."""
+    """Load data, prepare it, and draw graphs."""
     try:
         years, values, countries = load_and_prepare_data(
             "population_total.csv",
-            ["France", "Belgium"]
+            ["France", "Japan"]
             )
         xticks, yticks = get_ticks(values, years, Y_INTERVAL)
         plot_population(years, values, countries, xticks, yticks)
