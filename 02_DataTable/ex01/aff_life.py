@@ -7,7 +7,7 @@ def main():
     try:
         df = load("life_expectancy_years.csv")
         country = "Japan"
-        data = df[df['country'] == country]
+        data = df[df["country"] == country]
         years = [int(y) for y in data.columns[1:]]
         values = data.iloc[0, 1:].astype(float)
         xticks = list(range(min(years), max(years), 40))
