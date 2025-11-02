@@ -27,7 +27,7 @@ def convert_float(arg):
 
 def millions_formatter(x, pos):
     """Change the way millions are expressed."""
-    return f'{int(x / MILLION)}M'
+    return f"{int(x / MILLION)}M"
 
 
 def load_and_prepare_data(filename, countries):
