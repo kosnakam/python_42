@@ -6,7 +6,7 @@ def main():
     """Main function to read CSV files and create graphs."""
     try:
         df = load("life_expectancy_years.csv")
-        country = "Japan"
+        country = "France"
         data = df[df["country"] == country]
         years = [int(y) for y in data.columns[1:]]
         values = data.iloc[0, 1:].astype(float)
