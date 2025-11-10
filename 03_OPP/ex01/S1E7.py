@@ -2,7 +2,7 @@ from S1E9 import Character
 
 
 class Baratheon(Character):
-    """Representing the Baratheon family."""
+    """Representing the Baratheon family"""
     def __init__(
             self, first_name, is_alive=True,
             family_name="Baratheon", eyes="brouwn", hairs="dark"
@@ -23,7 +23,7 @@ class Baratheon(Character):
 
 
 class Lannister(Character):
-    """Representing the Lannister family."""
+    """Representing the Lannister family"""
     def __init__(
             self, first_name, is_alive=True,
             family_name="Lannister", eyes="blue", hairs="light"
