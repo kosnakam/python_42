@@ -1,7 +1,7 @@
 class calculator:
     """A class implementing arithmetic operations"""
     def __init__(self, arg: list[float]):
-        """Constructor of this class"""
+        """Constructor of calculator class"""
         self.lst = arg
 
     def __add__(self, object) -> None:
