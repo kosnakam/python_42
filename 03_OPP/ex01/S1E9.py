@@ -10,9 +10,15 @@ class Character(ABC):
         self.is_alive = is_alive
 
     def __str__(self):
+        """
+        To control how objects are represented as strings more user-friendly.
+        """
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self):
+        """
+        To control how objects are represented as strings more official.
+        """
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def die(self):
