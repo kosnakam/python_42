@@ -9,6 +9,12 @@ class Character(ABC):
         self.first_name = first_name
         self.is_alive = is_alive
 
+    def __str__(self):
+        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+
+    def __repr__(self):
+        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+
     def die(self):
         """Your docstring for Method"""
         self.is_alive = False
