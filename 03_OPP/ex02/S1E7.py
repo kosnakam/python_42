@@ -5,7 +5,7 @@ class Baratheon(Character):
     """Representing the Baratheon family"""
     def __init__(
             self, first_name, is_alive=True,
-            family_name="Baratheon", eyes="brouwn", hairs="dark"
+            family_name="Baratheon", eyes="brown", hairs="dark"
             ):
         """Your docstring for Constructor"""
         super().__init__(first_name, is_alive)
