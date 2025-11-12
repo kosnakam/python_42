@@ -21,5 +21,8 @@ class calculator:
 
     def __truediv__(self, object) -> None:
         """Function of Division"""
-        self.lst = [element / object for element in self.lst]
-        print(self.lst)
+        try:
+            self.lst = [element / object for element in self.lst]
+            print(self.lst)
+        except ZeroDivisionError:
+            print("Error: Division by zero is not allowed.")

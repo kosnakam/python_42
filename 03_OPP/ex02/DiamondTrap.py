@@ -3,12 +3,9 @@ from S1E7 import Baratheon, Lannister
 
 class King(Baratheon, Lannister):
     """Your docstring for Class"""
-    def __init__(
-            self, first_name, is_alive=True,
-            family_name="Baratheon", eyes="brouwn", hairs="dark"
-            ):
+    def __init__(self, first_name, is_alive=True):
         """Your docstring for Constructor"""
-        super().__init__(first_name, is_alive, family_name, eyes, hairs)
+        super().__init__(first_name, is_alive)
 
     def set_eyes(self, arg: str) -> None:
         """This function sets self.eyes = arg"""
