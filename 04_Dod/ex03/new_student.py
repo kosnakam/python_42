@@ -2,11 +2,15 @@ import random
 import string
 from dataclasses import dataclass, field
 
+
 def generate_id() -> str:
+    """Function generating id."""
     return "".join(random.choices(string.ascii_lowercase, k=15))
+
 
 @dataclass
 class Student:
+    """Data class"""
     name: str = ""
     surname: str = ""
     active: bool = True
