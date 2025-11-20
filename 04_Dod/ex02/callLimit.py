@@ -14,7 +14,7 @@ def callLimit(limit: int):
                 function(*args, **kwds)
             else:
                 print(f"Error: <function {function.__name__} \
-at {hex(id(function))} call too many times")
+at {hex(id(function))}> call too many times")
             count += 1
         return limit_function
     return callLimiter
