@@ -1,4 +1,4 @@
-# 42 Python Piscines
+# Python for Data Science
 
 This repository contains a collection of Python exercises and small projects completed as part of the 42 Python Piscines curriculum.
 
